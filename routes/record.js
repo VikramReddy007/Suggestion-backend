@@ -125,7 +125,7 @@ recordRoutes.route("/ganesh23suggestions").get(function (req, res) {
 });
 
 recordRoutes.route("/ganesh23/addsuggestion").post(async (req, res) => {
-  let currentTime = new Date(Date.now());
+  let currentTime = new Date();
   try {
     let document = {
       message: req.body.message,
