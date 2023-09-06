@@ -125,14 +125,14 @@ recordRoutes.route("/ganesh23suggestions").get(function (req, res) {
 });
 
 recordRoutes.route("/ganesh23/addsuggestion").post(async (req, res) => {
-  let currentTime = new Date();
+  let currentTime = new Date(Date.now());
+  var s = new Date(currentTime).toLocaleString(undefined, {
+    timeZone: "Asia/Kolkata",
+  });
   try {
     let document = {
       message: req.body.message,
-      timestamp:
-        currentTime.toLocaleDateString() +
-        " " +
-        currentTime.toLocaleTimeString(),
+      timestamp: s,
     };
 
     if (document.message === "") {
